@@ -225,3 +225,4 @@ class Generator
         return version_compare($this->swaggerVersion, '3.0', '>=');
     }
 }
+
