@@ -103,10 +103,12 @@ class Generator
         if (File::exists($this->docDir) && ! is_writable($this->docDir)) {
             throw new L5SwaggerException('Documentation storage directory is not writable');
         }
-
+        
         // delete all existing documentation
-        if (File::exists($this->docDir)) {
-            File::deleteDirectory($this->docDir);
+        if (File::exists($this->docDir)) { 
+            File::cleanDirectory($this->docDir); 
+            Storage::deleteDirectory($this->docDir); 
+            rmdir($this->docDir); 
         }
 
         File::makeDirectory($this->docDir);
