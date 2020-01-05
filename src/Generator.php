@@ -3,6 +3,7 @@
 namespace L5Swagger;
 
 use File;
+use Storage;
 use L5Swagger\Exceptions\L5SwaggerException;
 use Symfony\Component\Yaml\Dumper as YamlDumper;
 
