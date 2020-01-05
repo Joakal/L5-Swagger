@@ -82,7 +82,9 @@ class Generator
 
         // delete all existing documentation
         if (File::exists($this->docDir)) {
-            File::deleteDirectory($this->docDir);
+            File::cleanDirectory($this->docDir);
+            Storage::deleteDirectory($this->docDir);
+            rmdir($this->docDir);
         }
 
         File::makeDirectory($this->docDir);
